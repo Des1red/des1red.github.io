@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Des1red — Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cursor"></div>
+
+<div id="scene">
+  <div id="camera">
+    <div id="floor"></div>
+
+    <div id="setup">
+      <div id="desk">
+        <!-- Items sitting on desk surface -->
+        <div id="desk-top">
+          <!-- Monitor on desk -->
+          <div id="monitor" title="Click to access terminal">
+            <div class="monitor-outer">
+              <div class="monitor-screen">
+                <div id="screen-idle">
+                  <div class="idle-prompt">[ CLICK TO ACCESS ]</div>
+                  <div class="idle-cursor"></div>
+                </div>
+              </div>
+            </div>
+            <div class="monitor-stand"></div>
+            <div class="monitor-base"></div>
+          </div>
+        </div>
+
+        <div class="desk-surface"></div>
+        <div class="desk-front"></div>
+        <div class="desk-legs">
+          <div class="desk-leg"></div>
+          <div class="desk-leg"></div>
+        </div>
+
+        <!-- Tower under desk -->
+        <div id="tower">
+          <div class="tower-face tower-side"></div>
+          <div class="tower-face tower-top"></div>
+          <div class="tower-face tower-front">
+            <div class="tower-led"></div>
+            <div class="tower-led amber"></div>
+            <div class="tower-slot"></div>
+            <div class="tower-slot"></div>
+            <div class="tower-slot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="vignette"></div>
+
+<!-- Terminal overlay -->
+<div id="terminal-overlay">
+  <div id="terminal">
+    <div id="term-titlebar">
+      <div class="term-dot dot-close" id="dot-close"></div>
+      <div class="term-dot dot-min"></div>
+      <div class="term-dot dot-max"></div>
+      <div id="term-title">des1red@void ~ $</div>
+    </div>
+
+    <div id="term-tabs">
+      <div class="term-tab active" data-tab="about">whoami</div>
+      <div class="term-tab" data-tab="projects">loot</div>
+      <div class="term-tab" data-tab="toolshed">toolshed</div>
+      <div class="term-tab" data-tab="sidequests">sidequests</div>
+      <div class="term-tab" data-tab="skills">arsenal</div>
+      <div class="term-tab" data-tab="fieldlog">fieldlog</div>
+      <div class="term-tab" data-tab="contact">exfil</div>
+    </div>
+
+    <div id="term-body">
+
+      <!-- ABOUT -->
+      <div class="tab-content active" id="tab-about">
+        <div class="t-prompt">$ <span>cat whoami.txt</span></div>
+        <div class="t-output">
+          Go developer specializing in security tooling —<br>
+          authorization testing, host monitoring,<br>
+          controlled egress, and encryption.<br><br>
+          Seeking a role in penetration testing<br>
+          and web application security.
+        </div>
+        <div class="t-label">// focus</div>
+        <div class="t-value">
+          Web application security<br>
+          Linux systems & daemons<br>
+          Authorization & access control<br>
+          Security tooling development
+        </div>
+        <div class="t-label">// currently</div>
+        <div class="t-value">
+          Zone01 Athens — Software Development Program<br>
+          <span style="color:#1a5c34; font-size:11px;">in progress</span>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="tab-content" id="tab-projects">
+        <div class="t-prompt">$ <span>ls ./loot</span></div>
+        <div class="t-output">cwrap &nbsp; statehound &nbsp; proxychan &nbsp; shroud</div>
+
+        <div class="t-label">// cwrap</div>
+        <div class="t-value">
+          Identity-aware authorization testing tool.<br>
+          Compares endpoint behavior across session, anonymous,<br>
+          and modified identity states. Detects IDOR, broken<br>
+          access control, and credentialless token issuance.<br>
+          <br>
+          <span class="t-tag">Go</span><span class="t-tag">HTTP</span><span class="t-tag">JWT</span><span class="t-tag">recon</span>
+          <br><br>
+          <a class="t-link" href="https://github.com/Des1red/cwrap" target="_blank">github.com/Des1red/cwrap</a>
+        </div>
+
+        <div class="t-label">// statehound</div>
+        <div class="t-value">
+          Linux host change monitoring daemon.<br>
+          Tracks services, ports, persistence files,<br>
+          outbound connections, and suspicious processes.<br>
+          <br>
+          <span class="t-tag">Go</span><span class="t-tag">Linux</span><span class="t-tag">systemd</span><span class="t-tag">Unix sockets</span>
+          <br><br>
+          <a class="t-link" href="https://github.com/Des1red/statehound" target="_blank">github.com/Des1red/statehound</a>
+        </div>
+
+        <div class="t-label">// proxychan</div>
+        <div class="t-value">
+          Authenticated SOCKS5 egress proxy.<br>
+          IP whitelisting, destination blacklisting,<br>
+          Tor egress modes, SQLite-backed policy state.<br>
+          <br>
+          <span class="t-tag">Go</span><span class="t-tag">SOCKS5</span><span class="t-tag">Tor</span><span class="t-tag">SQLite</span>
+          <br><br>
+          <a class="t-link" href="https://github.com/Des1red/Proxychan" target="_blank">github.com/Des1red/Proxychan</a>
+        </div>
+
+        <div class="t-label">// shroud</div>
+        <div class="t-value">
+          Linux personal data lockdown tool.<br>
+          AES-256-GCM encryption, PBKDF2 key derivation,<br>
+          per-file salts, permission-preserving restore.<br>
+          <br>
+          <span class="t-tag">Go</span><span class="t-tag">AES-256-GCM</span><span class="t-tag">PBKDF2</span><span class="t-tag">Linux</span>
+          <br><br>
+          <a class="t-link" href="https://github.com/Des1red/shroud" target="_blank">github.com/Des1red/shroud</a>
+        </div>
+      </div>
+
+      <!-- TOOLSHED -->
+      <div class="tab-content" id="tab-toolshed">
+        <div class="t-prompt">$ <span>ls ./loot/toolshed</span></div>
+        <div class="t-output">goauth &nbsp; sqlitekit</div>
+      
+        <div class="t-label">// goauth</div>
+        <div class="t-value">
+          Go authentication middleware library.<br>
+          Reusable HTTP middleware with JWT access tokens,<br>
+          refresh tokens, anonymous sessions, role checks,<br>
+          optional CSRF enforcement, and pluggable token storage.<br>
+          <br>
+          <span class="t-tag">Go</span><span class="t-tag">JWT</span><span class="t-tag">HTTP middleware</span><span class="t-tag">refresh tokens</span><span class="t-tag">CSRF</span><span class="t-tag">RBAC</span>
+          <br><br>
+          <a class="t-link" href="https://github.com/Des1red/goauthlib" target="_blank">github.com/Des1red/goauthlib</a>
+        </div>
+      
+        <div class="t-label">// sqlitekit</div>
+        <div class="t-value">
+          SQLite initialization and migration helper for Go.<br>
+          Safe pragmas, ordered migrations, embedded schema support,<br>
+          and append-only migration validation.<br>
+          <br>
+          <span class="t-tag">Go</span><span class="t-tag">SQLite</span><span class="t-tag">migrations</span><span class="t-tag">embedded files</span><span class="t-tag">schema validation</span>
+          <br><br>
+          <a class="t-link" href="https://github.com/Des1red/gosqlitekit" target="_blank">github.com/Des1red/gosqlitekit</a>
+        </div>
+      </div>
+
+      <!-- SIDEQUESTS -->
+      <div class="tab-content" id="tab-sidequests">
+        <div class="t-prompt">$ <span>ls ./loot/sidequests</span></div>
+        <div class="t-output">renderctl &nbsp; SeeAll &nbsp; vex</div>
+      
+        <div class="t-label">// renderctl</div>
+        <div class="t-value">
+          UPnP/DLNA TV media controller.<br>
+          Discovers compatible TVs and controls playback through<br>
+          AVTransport SOAP requests.<br>
+          <br>
+          Includes SSDP discovery, M-SEARCH fallback, endpoint probing,<br>
+          cache-based device selection, local HTTP media serving,<br>
+          streaming mode, vendor-aware playback handling,<br>
+          probe-only mode, graceful shutdown, and shell autocomplete.<br>
+          <br>
+          <span class="t-tag">Go</span><span class="t-tag">UPnP</span><span class="t-tag">DLNA</span><span class="t-tag">SSDP</span><span class="t-tag">SOAP</span><span class="t-tag">HTTP streaming</span>
+          <br><br>
+          <a class="t-link" href="https://github.com/Des1red/renderctl" target="_blank">github.com/Des1red/renderctl</a>
+        </div>
+      
+        <div class="t-label">// SeeAll</div>
+        <div class="t-value">
+          Modular news aggregator.<br>
+          Vanilla JavaScript frontend with live feed rendering,<br>
+          automatic updates, responsive dark UI, normalized post rendering,<br>
+          infinite scrolling, and a small Go backend for aggregation support.<br>
+          <br>
+          <span class="t-tag">JavaScript</span><span class="t-tag">ES Modules</span><span class="t-tag">HTML</span><span class="t-tag">CSS</span><span class="t-tag">Go</span>
+          <br><br>
+          <a class="t-link" href="https://des1red.github.io/SeeAll/#daily" target="_blank">des1red.github.io/SeeAll</a>
+        </div>
+
+        <div class="t-label">// vex</div>
+          <div class="t-value">
+            Local-first conversational runtime.<br>
+            Single-process voice/text companion designed for deterministic behavior,<br>
+            privacy, and minimal interaction.<br>
+            <br>
+            Uses rule-based knowledge modules before optional local LLM fallback.<br>
+            Includes wake/sleep state, controlled command execution,<br>
+            PTY sessions, local entity memory, and Ollama-based inference support.<br>
+            <br>
+            <span class="t-tag">Go</span><span class="t-tag">local-first</span><span class="t-tag">LLM</span><span class="t-tag">Ollama</span><span class="t-tag">PTY</span><span class="t-tag">runtime state</span>
+            <br><br>
+            <span style="color:#1a5c34; font-size:11px;">private repo — source available on request</span>          </div>
+      </div>
+      <!-- SKILLS -->
+      <div class="tab-content" id="tab-skills">
+        <div class="t-prompt">$ <span>cat arsenal.json</span></div>
+
+        <div class="t-label">// languages</div>
+        <div class="t-value">
+          <span class="t-tag">Go</span><span class="t-tag">JavaScript</span>
+        </div>
+
+        <div class="t-label">// security</div>
+        <div class="t-value">
+          <span class="t-tag">JWT</span><span class="t-tag">RBAC</span><span class="t-tag">CSRF</span><span class="t-tag">authorization testing</span><span class="t-tag">access control</span><span class="t-tag">encryption</span><span class="t-tag">secure logging</span>
+        </div>
+
+        <div class="t-label">// systems</div>
+        <div class="t-value">
+          <span class="t-tag">Linux</span><span class="t-tag">systemd</span><span class="t-tag">Unix sockets</span><span class="t-tag">CLI tools</span><span class="t-tag">daemons</span><span class="t-tag">service management</span>
+        </div>
+
+        <div class="t-label">// networking</div>
+        <div class="t-value">
+          <span class="t-tag">SOCKS5</span><span class="t-tag">TCP/UDP sockets</span><span class="t-tag">HTTP</span><span class="t-tag">SSH</span><span class="t-tag">proxying</span><span class="t-tag">Tor egress</span><span class="t-tag">UPnP/DLNA</span><span class="t-tag">SSDP</span><span class="t-tag">SOAP</span>
+        </div>
+
+        <div class="t-label">// tools</div>
+        <div class="t-value">
+          <span class="t-tag">Linux</span><span class="t-tag">systemd</span><span class="t-tag">Git</span><span class="t-tag">GitHub</span><span class="t-tag">VMware</span><span class="t-tag">Burp Suite</span><span class="t-tag">Nmap</span><span class="t-tag">curl</span><span class="t-tag">netcat</span><span class="t-tag">dirb</span><span class="t-tag">ffuf</span>
+        </div>
+      </div>
+
+      <!-- FIELDLOG -->
+      <div class="tab-content" id="tab-fieldlog">
+        <div class="t-prompt">$ <span>cat fieldlog.txt</span></div>
+      
+        <div class="t-label">// training</div>
+        <div class="t-value">
+          Long-term self-directed study in networking, Linux systems,<br>
+          protocols, ports, web application security, and penetration testing.
+        </div>
+      
+        <div class="t-label">// Hack the Base</div>
+        <div class="t-value">
+          Hack the Base (Supabase, 2024)<br>
+          14th place — 750 points<br>
+          <span style="color:#1a5c34; font-size:11px;">open community cybersecurity competition</span>
+        </div>
+      
+        <div class="t-label">// Hack The Box</div>
+        <div class="t-value">
+          Active HTB practice focused on Linux enumeration,<br>
+          web exploitation, privilege escalation,<br>
+          and post-exploitation methodology.
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="tab-content" id="tab-contact">
+        <div class="t-prompt">$ <span>cat exfil.txt</span></div>
+        <div class="t-output">
+          Open to penetration testing and<br>
+          security engineering roles.
+        </div>
+      
+        <div class="t-label">// contact</div>
+        <div class="t-value">
+          Athens, Greece<br>
+          <a class="t-link" href="mailto:des1redgit@gmail.com">des1redgit@gmail.com</a>
+        </div>
+      
+        <div class="t-label">// links</div>
+        <div class="t-value">
+          <a class="t-link" href="https://github.com/Des1red" target="_blank">github.com/Des1red</a><br>
+          <a class="t-link" href="https://des1red.github.io" target="_blank">des1red.github.io</a>
+        </div>
+      
+        <div class="t-prompt" style="margin-top:24px;">
+          $ <span>_</span><span style="animation:blink 1s step-end infinite; display:inline-block; width:8px; height:14px; background:var(--glow); vertical-align:middle; margin-left:2px;"></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="click-hint">[ click the monitor ]</div>
+<button id="btn-back">← disconnect</button>
+
+<script src="script.js"></script>
+</body>
+</html>
