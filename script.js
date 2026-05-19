@@ -28,8 +28,8 @@
     clickHint.style.display = 'none';
 
     // Push camera forward
-    camera.style.transform = 'translateZ(400px)';
-    camera.style.transition = 'transform 1.4s cubic-bezier(0.77,0,0.175,1)';
+    camera.style.transform = 'translateZ(1050px)';
+    camera.style.transition = 'transform 0.95s cubic-bezier(0.77,0,0.175,1)';
 
     // Fade scene items
     document.getElementById('setup').style.opacity = '0';
