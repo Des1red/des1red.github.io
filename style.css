@@ -773,6 +773,7 @@ html, body {
   #scene { perspective: 500px; }
 
   #setup {
+    top: 80%;
     width: 260px;
     transform: translate(-50%, -42%) translateZ(0px);
   }
