@@ -45,14 +45,20 @@
   function closeTerminal() {
     if (!terminalOpen) return;
     terminalOpen = false;
-
+  
     overlay.classList.remove('active');
     btnBack.classList.remove('visible');
+  
+    const setup = document.getElementById('setup');
+    setup.style.opacity = '1';
 
-    setTimeout(() => {
+     // Then zoom out from close-up back to normal
+    requestAnimationFrame(() => {
+      camera.style.transition = 'transform 1.4s cubic-bezier(0.77,0,0.175,1)';
       camera.style.transform = 'translateZ(0px)';
-      document.getElementById('setup').style.opacity = '1';
-    }, 200);
+    });
+  
+  
   }
 
   btnBack.addEventListener('click', closeTerminal);
